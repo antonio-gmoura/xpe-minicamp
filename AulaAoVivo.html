@@ -18,18 +18,23 @@
         function verificaIntervalo(inicial, final) {
 
             var contador = 0;
+            var soma = 0;
+            var multiplicacao = 1;
             var controle = inicial; // const // let
 
             while(controle <= final) {
-
                 if (verificaDivisivel(controle)) {
                     console.log(controle);
                     contador ++;
+                    soma += controle;
+                    multiplicacao = multiplicacao * controle;
                 }
                 controle += 1;
             }
 
             console.log ('Quantidade: ' + contador);
+            console.log ('Soma: ' + soma);
+            console.log ('Multiplicacao: ' + multiplicacao);
         
         }
 
