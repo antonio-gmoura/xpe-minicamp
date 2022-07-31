@@ -1,0 +1,24 @@
+<html>
+    <script>
+        function verificaNumeroPrimo(numero) {
+            var ehNumeroPrimo = true;
+            if (numero > 1) {
+                for (var i = 2; i < numero; i++) {
+                    if (numero % i == 0) {
+                        ehNumeroPrimo = false;
+                        break;
+                    }
+                }
+            } else {
+                ehNumeroPrimo = false;
+            }
+            return "O número " + numero + (ehNumeroPrimo ? " " : " não ") + "é primo";
+        }
+        function checaNumeroPrimo(listaNumeros) {
+            for (var i = 0; i < listaNumeros.length; i++) {
+                console.log(verificaNumeroPrimo(listaNumeros[i]))
+            }
+        }
+    </script>
+
+</html>
