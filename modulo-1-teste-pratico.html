@@ -1,24 +1,32 @@
 <html>
     <script>
-        function verificaNumeroPrimo(numero) {
-            var ehNumeroPrimo = true;
-            if (numero > 1) {
-                for (var i = 2; i < numero; i++) {
-                    if (numero % i == 0) {
-                        ehNumeroPrimo = false;
-                        break;
-                    }
-                }
-            } else {
-                ehNumeroPrimo = false;
+        function ehNumeroPrimo(numero) {
+            if (numero < 2) {
+                return false;
             }
-            return "O número " + numero + (ehNumeroPrimo ? " " : " não ") + "é primo";
+            for (var i = 2; i < numero; i++) {
+                if (numero % i == 0) {
+                    return false;
+                }
+            }
+            return true;
         }
-        function checaNumeroPrimo(listaNumeros) {
+        function verificaNumeroPrimo(numero) {
+            return "O número " + numero + (ehNumeroPrimo(numero) ? " " : " não ") + "é primo";
+        }
+        function verificaNumeroPrimoLista(listaNumeros) {
             for (var i = 0; i < listaNumeros.length; i++) {
                 console.log(verificaNumeroPrimo(listaNumeros[i]))
             }
         }
+        function somaNumerosPrimosIntervalo(numeroInicial, NumeroFinal){
+            var soma = 0
+            for (var i = numeroInicial; i <= NumeroFinal; i++) {
+                if (ehNumeroPrimo(i)) {
+                    soma += i;
+                }
+            }
+            console.log(`A soma dos números primos entre '${numeroInicial}' e '${NumeroFinal}' é '${soma}'`);
+        }
     </script>
-
 </html>
