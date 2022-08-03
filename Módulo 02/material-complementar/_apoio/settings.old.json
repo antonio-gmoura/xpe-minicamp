@@ -1,0 +1,9 @@
+{
+    "editor.minimap.enabled": false,
+    "files.autoSave": "afterDelay",
+    "editor.wordWrap": "on",
+    "workbench.iconTheme": "vscode-icons",
+    "git.enableSmartCommit": true,
+    "git.confirmSync": false,
+    "workbench.colorTheme": "Winter is Coming (Dark Blue - No Italics)"
+}
