@@ -15,18 +15,32 @@ function calculateImc(weight, height) {
   return weight / (height * height);
 }
 
+function evaluateIcm(imc) {
+  if (imc > 40) return 'Obesidade grau III';
+  if (imc >= 35) return 'Obesidade grau II';
+  if (imc >= 30) return 'Obesidade grau I';
+  if (imc >= 25) return 'Acima do peso';
+  if (imc >= 18.5) return 'Peso normal';
+  if (imc >= 17) return 'Abaixo do peso';
+  if (imc >= 16) return 'Muito abaixo do peso';
+  return 'inválido';
+}
+
 function handleButtonClick() {
   var inputWeight = document.querySelector('#input-weight');
   var inputHeight = document.querySelector('#input-height');
   var imcResult = document.querySelector('#imc-result');
+  var imcEvaluation = document.querySelector('#imc-evaluation');
 
   var weight = inputWeight.value;
   var height = inputHeight.value;
 
-  var imc = calculateImc(weight, height);
+  var imc = Number(calculateImc(weight, height).toFixed(2));
   var formattedImc = imc.toFixed(2).replace('.', ',');
 
   imcResult.textContent = formattedImc;
+
+  imcEvaluation.textContent = evaluateIcm(imc);
 }
 
 start();
