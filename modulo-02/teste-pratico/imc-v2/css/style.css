@@ -8,6 +8,11 @@ body {
   margin-top: 50px;
 }
 
+#imc-evaluation,
+#imc-result {
+  color: brown;
+}
+
 input {
   margin-top: 5px;
   width: 200px;
